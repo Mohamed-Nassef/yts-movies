@@ -4,9 +4,7 @@ import LatestMovies from "./components/latestMovies/LatestMovies"
 import UpComingMovies from "./components/upcomingMovies/UpComingMovies"
 
 function Home() {
-    //const { data: popularMovies, } = usePopularMovies();
-    //console.log(popularMovies);
-
+   
     return (
         <>
             <TopSection />
