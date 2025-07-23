@@ -29,7 +29,11 @@ try {
 // 1️⃣ Copy the deploy.cjs file into your project root.
 //
 // 2️⃣ Add this script to your package.json:
-//     "commit-deploy": "node deploy.cjs"
+//     "scripts": {
+//         "deploy": "gh-pages -d dist",
+//         "commit-deploy": "node deploy.cjs"
+//     },
+//     
 //
 // 3️⃣ Install gh-pages if it's not already installed:
 //     npm install gh-pages --save-dev

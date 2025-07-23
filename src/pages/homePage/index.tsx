@@ -8,7 +8,6 @@ function Home() {
     return (
         <>
             <TopSection />
-            <h1>Home</h1>
             <PopularDownloads />
             <LatestMovies />
             <UpComingMovies />

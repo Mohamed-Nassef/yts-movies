@@ -14,6 +14,9 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
+                element: <Home />,
+            },
+            {
                 path: '/yts-movies',
                 element: <Home />,
             },
