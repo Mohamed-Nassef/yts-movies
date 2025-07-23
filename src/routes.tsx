@@ -14,6 +14,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
+                path: '/yts-movies',
                 element: <Home />,
             },
             {
@@ -32,7 +33,7 @@ export const router = createBrowserRouter([
             {
                 path: '/movie/:id',
                 element: <MovieDetails />,
-                
+
             },
             {
                 path: '*',
