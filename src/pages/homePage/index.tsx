@@ -4,9 +4,11 @@ import LatestMovies from "./components/latestMovies/LatestMovies"
 import UpComingMovies from "./components/upcomingMovies/UpComingMovies"
 
 function Home() {
+    // test
     return (
         <>
             <TopSection />
+            <h1>Home</h1>
             <PopularDownloads />
             <LatestMovies />
             <UpComingMovies />
