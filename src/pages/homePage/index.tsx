@@ -4,7 +4,6 @@ import LatestMovies from "./components/latestMovies/LatestMovies"
 import UpComingMovies from "./components/upcomingMovies/UpComingMovies"
 
 function Home() {
-   //// this is a  test 
     return (
         <>
             <TopSection />
