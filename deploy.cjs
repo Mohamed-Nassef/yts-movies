@@ -12,6 +12,9 @@ try {
     console.log('⬆️ Pushing to GitHub...');
     execSync('git push', { stdio: 'inherit' });
 
+    console.log('🏗️ Building the project...');
+    execSync('npm run build', { stdio: 'inherit' });
+
     console.log('🚀 Deploying to GitHub Pages...');
     execSync('npm run deploy', { stdio: 'inherit' });
 
