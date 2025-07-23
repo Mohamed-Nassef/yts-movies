@@ -25,17 +25,18 @@ import {
     AdvancedSearchItem,
     SpinerSearch
 } from './HeaderStyles';
-import { useState, useEffect, useRef } from 'react';
-//import { debounce } from 'lodash';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { debounce } from 'lodash';
 import { useSearchMovies } from './actions/useSearchMovies';
 import { CircularProgress } from '@mui/material';
-import {useDebouncedValue} from './actions/useDebouncedValue';
+//import { useDebouncedValue } from './actions/useDebouncedValue';
 
 
 export default function Header() {
 
     const [searchTerm, setSearchTerm] = useState(''); // State to store the search term
-    const debouncedSearchTerm = useDebouncedValue(searchTerm, 500); // Debounced search term
+    //const debouncedSearchTerm = useDebouncedValue(searchTerm, 500); // Debounced search term
+    const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
     const [showDropdown, setShowDropdown] = useState(false); // State to control the visibility of the dropdown in the search bar
     const searchRef = useRef<HTMLDivElement>(null);
 
@@ -51,17 +52,17 @@ export default function Header() {
         setAnchorEl(null);
     };
 
-    // const debounceInput = useCallback(
-    //     debounce((value: string) => {
-    //         setDebouncedSearchTerm(value);
-    //     }, 500),
-    //     []
-    // );
+    const debounceInput = useCallback(
+        debounce((value: string) => {
+            setDebouncedSearchTerm(value);
+        }, 500),
+        []
+    );
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setSearchTerm(value);
-       //debounceInput(value);
+        debounceInput(value);
     };
 
     useEffect(() => {
@@ -74,9 +75,9 @@ export default function Header() {
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
-           // debounceInput.cancel();
+            debounceInput.cancel();
         };
-    }, []);
+    }, [debounceInput]);
 
     // Use the useSearchMovies hook to fetch search results (api call)
     const { data: searchResults = [], isLoading } = useSearchMovies(debouncedSearchTerm);
@@ -129,7 +130,6 @@ export default function Header() {
                             value={searchTerm}
                             onChange={handleChange}
                             onFocus={() => setShowDropdown(true)}
-                            onBlur={() => setShowDropdown(false)}
                         />
                         {isLoading && (
                             <SpinerSearch>
@@ -146,7 +146,10 @@ export default function Header() {
                                     <SearchDropdownItem
                                         to={`/movie/${movie.id}`}
                                         key={movie.id}
-                                        onClick={() => { setShowDropdown(false); setSearchTerm(''); }}
+                                        onClick={() => {
+                                            setShowDropdown(false);
+                                            setSearchTerm('');
+                                        }}
                                     >
                                         <ListItemAvatar>
                                             <Avatar
@@ -161,6 +164,7 @@ export default function Header() {
                                             secondary={movie.year}
                                         />
                                     </SearchDropdownItem>
+
                                 ))}
 
                                 <AdvancedSearchItem onClick={() => setShowDropdown(false)}>
