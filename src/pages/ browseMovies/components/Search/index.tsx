@@ -22,7 +22,8 @@ interface SearchProps {
 }
 
 const Search = ({ onSubmit }: SearchProps) => {
-    const { handleSubmit, control } = useForm<FiltersType>({
+
+    const { handleSubmit, control, } = useForm<FiltersType>({
         defaultValues: {
             search: '',
             quality: 'all',

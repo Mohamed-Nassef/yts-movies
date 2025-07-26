@@ -38,7 +38,7 @@ const CommentsSection = () => {
 
     return (
         <Box sx={{ mt: 6, backgroundColor: '#1e1e1e', p: 3, borderRadius: 3 }}>
-            <Typography variant="h6" sx={{ color: 'primary.main', mb: 2 }}>
+            <Typography variant="h6" sx={{ color: 'primary.main', mb: 2 , fontWeight: 'bold', textAlign: 'center'}}>
                 Comments
             </Typography>
 

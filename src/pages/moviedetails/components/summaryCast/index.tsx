@@ -7,12 +7,15 @@ interface Props {
 }
 
 const SummaryCast = ({ description, cast }: Props) => {
+    description.length === 0 && (description = 'No plot summary available.');
+    description.length > 500 && (description = description.slice(0, 500) + '...');
+    cast.length === 0 && (cast = [{ name: 'No cast available.', character_name: 'No cast available.', imdb_code: 'No cast available.', url_small_image: 'No cast available.' }]);
     return (
         <Box sx={{ backgroundColor: '#1e1e1e', borderRadius: 3, px: 4, py: 6, mt: 4 }}>
             <Grid container spacing={4}>
                 {/* Plot summary */}
                 <Grid size={{ xs: 12, md: 8 }}>
-                    <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2, color: '#fff' }}>
+                    <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2, color: 'primary.main'}}>
                         Plot summary
                     </Typography>
                     <Typography variant="body1" sx={{ color: '#aaa', lineHeight: 1.8 }}>
@@ -20,9 +23,9 @@ const SummaryCast = ({ description, cast }: Props) => {
                     </Typography>
                 </Grid>
 
-                {/* Top cast only */}
+                {/* Top cast */}
                 <Grid size={{ xs: 12, md: 4 }} >
-                    <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#fff', mb: 2 }}>
+                    <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'primary.main', mb: 2 }}>
                         Top cast
                     </Typography>
 

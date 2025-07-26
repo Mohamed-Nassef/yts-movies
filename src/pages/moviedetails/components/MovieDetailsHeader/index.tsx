@@ -27,7 +27,7 @@ const MovieDetailsHeader = ({ movie, similar }: Props) => {
             <Grid size={{ xs: 12, md: 9 }} >
                 <Grid container spacing={3}>
                     {/* Poster */}
-                    <Grid size={{ xs: 12, sm: 4 }} >
+                    <Grid size={{ xs: 12, sm: 4 }} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
                         <PosterImage
                             onError={(e) => (e.currentTarget.src = Nopster)}
                             src={large_cover_image}
@@ -47,7 +47,7 @@ const MovieDetailsHeader = ({ movie, similar }: Props) => {
 
                         {/* Genres */}
                         <Typography sx={{ mb: 1, color: 'text.secondary' }}>Genres:</Typography>
-                        <Stack direction="row" spacing={1} sx={{ mb: 4, flexWrap: 'wrap' }}>
+                        <Stack direction="row" sx={{ mb: 4, flexWrap: 'wrap', gap: 1 }}>
                             {genres.map((genre) => (
                                 <Chip key={genre} label={genre} color="secondary" variant="outlined" />
                             ))}
@@ -89,7 +89,7 @@ const MovieDetailsHeader = ({ movie, similar }: Props) => {
 
             {/* Similar Movies */}
             <Grid size={{ xs: 12, md: 3 }} >
-                <Typography variant="h6" color="primary" textAlign={'center'}>
+                <Typography variant="h6" color="primary" textAlign={'center'} fontWeight="bold" sx={{ mb: 2 }}>
                     Similar Movies
                 </Typography>
                 <Grid container spacing={2}>

@@ -13,6 +13,7 @@ export const PosterImage = styled('img')(({ theme }) => ({
     borderRadius: theme.shape.borderRadius,
     objectFit: 'cover',
     display: 'block',
+
 }));
 
 export const MovieImage = styled('img')(({ theme }) => ({

@@ -30,7 +30,7 @@ const TechSpecsSection = ({ torrents }: Props) => {
 
     return (
         <Box sx={{ backgroundColor: '#1e1e1e', borderRadius: 3, px: 3, py: 4, mt: 4 }}>
-            <Typography variant="h6" sx={{ color: 'primary.main', mb: 2 }}>
+            <Typography variant="h6" sx={{ color: 'primary.main', mb: 2, fontWeight: 'bold' , textAlign: 'center' }}>
                 Tech specs
             </Typography>
 
@@ -39,31 +39,34 @@ const TechSpecsSection = ({ torrents }: Props) => {
                 onChange={handleTabChange}
                 textColor="inherit"
                 indicatorColor="primary"
-                sx={{ mb: 3 }}
+                variant="scrollable"
+                scrollButtons
+                allowScrollButtonsMobile
+                sx={{ mb: 3 ,}}
             >
                 {torrents.map((torrent) => (
                     <Tab
                         key={torrent.hash}
-                        label={`${torrent.quality}.${torrent.type.toUpperCase()}`}
+                        label={`${torrent.quality}.${torrent.type.toUpperCase().slice(0, 3)}`}
                         sx={{ color: '#fff', textTransform: 'none' }}
                     />
                 ))}
             </Tabs>
 
-            <Grid container spacing={2} sx={{backgroundColor: '#0d0a0a54',padding: 4, borderRadius: 2}}>
-                <Grid size={{ xs: 12, sm: 6, md: 4 }} >
+            <Grid container spacing={2} sx={{ backgroundColor: '#0d0a0a54', padding: 4, borderRadius: 2 }}>
+                <Grid size={{ xs: 6, sm: 4 }} >
                     <Box display="flex" alignItems="center" gap={1}>
                         <StorageIcon color="action" />
                         <Typography sx={{ color: '#ccc' }}>{current.size}</Typography>
                     </Box>
                 </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+                <Grid size={{ xs: 6, sm: 4 }}>
                     <Box display="flex" alignItems="center" gap={1}>
                         <CropSquareIcon color="action" />
                         <Typography sx={{ color: '#ccc' }}>{current.quality || '1280x720'}</Typography>
                     </Box>
                 </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+                <Grid size={{ xs: 6, sm: 4 }}>
                     <Box display="flex" alignItems="center" gap={1}>
                         <MovieIcon color="action" />
                         <Typography sx={{ color: '#ccc' }}>
@@ -71,26 +74,26 @@ const TechSpecsSection = ({ torrents }: Props) => {
                         </Typography>
                     </Box>
                 </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-                    <Box display="flex" alignItems="center" gap={1}>
-
-                        <Button href={current.url} variant="contained" color="primary" size="small">
-                            <DownloadIcon color="action" />
-                        </Button>
-                    </Box>
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-                    <Box display="flex" alignItems="center" gap={1}>
-                        <VisibilityIcon color="action" />
-                        <Typography sx={{ color: '#ccc' }}>{current.seeds}</Typography>
-                    </Box>
-                </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+                <Grid size={{ xs: 6, sm: 4 }}>
                     <Box display="flex" alignItems="center" gap={1}>
                         <Typography sx={{ color: '#ccc' }}>
                             {current.peers} peers
                         </Typography>
                     </Box>
+                </Grid>
+                <Grid size={{ xs: 6, sm: 4 }}>
+                    <Box display="flex" alignItems="center" gap={1}>
+                        <VisibilityIcon color="action" />
+                        <Typography sx={{ color: '#ccc' }}>{current.seeds}</Typography>
+                    </Box>
+                </Grid>
+                <Grid size={{ xs: 6, sm: 4 }}>
+                    <Box display="flex" alignItems="center" gap={1}>
+                        <Button href={current.url} variant="contained" color="primary" size="small">
+                            <DownloadIcon color="action" />
+                        </Button>
+                    </Box>
+
                 </Grid>
             </Grid>
         </Box>
