@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Search from './components/Search';
 import { useSearch } from './actions/useSearch';
-import MovieList from './components/movelist/MoveList';
+import MovieList from '../../shared/components/movelist/MoveList';
 import PaginationBar from '../../shared/components/paginationBar/PaginationBar';
 import BrowseSearchLoading from '../../shared/components/globalLoading//BrowseSearchLoading';
 import type { FiltersType } from './typs/FetchSearchTypes'
@@ -23,7 +23,7 @@ const BrowseMovies = () => {
 
     const [filters, setFilters] = useState<FiltersType>(initialFilters);
     const [page, setPage] = useState(1);
-    
+
     const { data, isLoading } = useSearch({
         ...filters,
         order_by: 'desc',
@@ -33,7 +33,7 @@ const BrowseMovies = () => {
 
     const handleSubmit = (newFilters: FiltersType) => {
         setFilters(newFilters);
-        setPage(1); 
+        setPage(1);
     };
 
     return (

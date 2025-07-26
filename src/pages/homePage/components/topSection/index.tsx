@@ -15,7 +15,7 @@ import RssFeedIcon from '@mui/icons-material/RssFeed';
 
 const TopSection = () => {
     return (
-        <StyledSection>
+        <StyledSection >
             <Title>Download YTS YIFY movies: HD smallest size</Title>
 
             <Subtitle>

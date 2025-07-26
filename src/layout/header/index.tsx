@@ -26,7 +26,7 @@ import {
     SpinerSearch
 } from './HeaderStyles';
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { debounce } from 'lodash';
+import { debounce  } from 'lodash';
 import { useSearchMovies } from './actions/useSearchMovies';
 import { CircularProgress } from '@mui/material';
 //import { useDebouncedValue } from './actions/useDebouncedValue';
@@ -88,7 +88,13 @@ export default function Header() {
                 {/* Logo */}
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Link to="/">
-                        <img src={logo} alt="YTS Logo" style={{ height: '40px' }} />
+                        <Box
+                            component="img"
+                            src={logo}
+                            alt="YTS Logo"
+                            sx={{
+                                height: { xs: '20px', sm: '30px', md: '35px', lg: '40px' },
+                            }}></Box>
                     </Link>
                     <Typography
                         variant="body2"
@@ -102,16 +108,7 @@ export default function Header() {
                     </Typography>
                 </Box>
 
-                {/* Mobile Menu Button */}
-                <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                    <IconButton
-                        color="primary"
-                        onClick={handleMenuOpen}
-                        size="large"
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                </Box>
+
 
                 {/* Search Input */}
                 <Box sx={{
@@ -172,7 +169,7 @@ export default function Header() {
                                         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                                             🔍 Advanced Search
                                         </Typography>
-                                        <Typography variant="caption">
+                                        <Typography variant="caption" sx={{ fontSize: { xs: '10px' }}} >
                                             Find more results and apply filters
                                         </Typography>
                                     </Link>
@@ -181,7 +178,16 @@ export default function Header() {
                         </SearchDropdown>
                     )}
                 </Box>
-
+                {/* Mobile Menu Button */}
+                <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                    <IconButton
+                        color="primary"
+                        onClick={handleMenuOpen}
+                        size="large"
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                </Box>
                 {/* Navigation Links */}
                 <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3, alignItems: 'center' }}>
                     <StyledNavLink to="/">Home</StyledNavLink>

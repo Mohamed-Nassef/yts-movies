@@ -5,7 +5,7 @@ export const StyledSection = styled(Box)(({ theme }) => ({
     backgroundColor: 'transparent',
     color: theme.palette.text.primary,
     textAlign: 'center',
-    padding: theme.spacing(4, 0),
+    padding: theme.spacing(1, 0),
 }));
 
 export const Title = styled(Typography)(({ theme }) => ({

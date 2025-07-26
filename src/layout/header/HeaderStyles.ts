@@ -96,7 +96,6 @@ export const SearchDropdownItem = styled(Link)(({ theme }) => ({
 export const AdvancedSearchItem = styled(ListItem)(({ theme }) => ({
     backgroundColor: '#0a5',
     justifyContent: 'center',
-    marginTop: theme.spacing(1),
     borderRadius: theme.spacing(1),
     flexDirection: 'column',
     alignItems: 'center',

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSearch } from '../ browseMovies/actions/useSearch';
-import MovieList from '../ browseMovies/components/movelist/MoveList';
+import MovieList from '../../shared/components/movelist/MoveList';
 import PaginationBar from '../../shared/components/paginationBar/PaginationBar';
 import BrowseSearchLoading from '../../shared/components/globalLoading/BrowseSearchLoading';
 import { Typography } from '@mui/material';

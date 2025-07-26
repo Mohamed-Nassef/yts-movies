@@ -1,6 +1,6 @@
 import { Grid, Box } from '@mui/material';
-import type { Movie } from '../../../homePage/types/MovieCard';
-import MovieCard from '../../../../shared/components/moviecard';
+import type { Movie } from '../../../pages/homePage/types/MovieCard';
+import MovieCard from '../moviecard';
 
 
 
@@ -11,7 +11,7 @@ const MovieList = ({ movies }: { movies: Movie[] }) => {
         }>
             <Grid container spacing={4} sx={{ py: 4 }}>
                 {movies.map((movie) => (
-                    <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={movie.id}>
+                    <Grid display="flex" justifyContent="center" alignItems="center" size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={movie.id}>
                         <MovieCard movie={movie} />
                     </Grid>
                 ))}

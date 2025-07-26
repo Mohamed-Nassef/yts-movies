@@ -8,7 +8,7 @@ interface Props {
 
 const PaginationBar = ({ currentPage, totalPages, onChange }: Props) => {
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, }}>
             <Pagination
                 count={totalPages}
                 page={currentPage}
@@ -16,6 +16,7 @@ const PaginationBar = ({ currentPage, totalPages, onChange }: Props) => {
                 color="primary"
                 variant="outlined"
                 shape="rounded"
+                size='small'
             />
         </Box>
     );
