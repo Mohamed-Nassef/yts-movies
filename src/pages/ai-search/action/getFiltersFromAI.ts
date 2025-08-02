@@ -1,4 +1,4 @@
-const API_KEY = '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';
+const API_KEY = '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';
 
 export async function getFiltersFromAI(userPrompt: string) {
     const systemPrompt = `You are a movie filter generator.
