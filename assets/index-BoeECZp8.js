@@ -289,7 +289,7 @@ function print() { __p += __j.call(arguments, '') }
             0 0 8px #89c40344,
             0 0 16px #89c40322,
             0 0 32px #89c40311
-          `},children:[R.jsx(lb,{fullWidth:!0,placeholder:"Describe the movie...",variant:"standard",multiline:!0,minRows:3,value:e,onChange:u=>t(u.target.value),onKeyDown:o,InputProps:{disableUnderline:!0},sx:{color:"text.primary",backgroundColor:"background.paper",borderRadius:2,px:1}}),R.jsx(nb,{onClick:i,disabled:!e.trim()||n,children:n?R.jsx(ng,{size:20,color:"primary"}):R.jsx(pU,{sx:{color:"primary.main"}})})]})})}const tx="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";async function gU(e){const t=`You are a movie filter generator.
+          `},children:[R.jsx(lb,{fullWidth:!0,placeholder:"Describe the movie...",variant:"standard",multiline:!0,minRows:3,value:e,onChange:u=>t(u.target.value),onKeyDown:o,InputProps:{disableUnderline:!0},sx:{color:"text.primary",backgroundColor:"background.paper",borderRadius:2,px:1}}),R.jsx(nb,{onClick:i,disabled:!e.trim()||n,children:n?R.jsx(ng,{size:20,color:"primary"}):R.jsx(pU,{sx:{color:"primary.main"}})})]})})}const tx="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";async function gU(e){const t=`You are a movie filter generator.
 Given a natural language description, return a JSON object with this structure:
 {
   quality: string,      // One of: ["480p", "720p", "1080p", "1080p.x265", "2160p", "3d"]
