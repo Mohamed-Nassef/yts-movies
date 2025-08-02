@@ -12,7 +12,7 @@ export const SectionWrapper = styled(Box)(({ theme }) => ({
 
 export const Title = styled(Typography)(({ theme }) => ({
     color: theme.palette.primary.main,
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(1),
     textAlign: 'center',
     marginTop: theme.spacing(2),
 }));

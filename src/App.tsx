@@ -13,10 +13,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <QueryClientProvider client={queryClient}>
-          <CustomGlobalStyles />
-          <RouterProvider router={router} />
-        </QueryClientProvider>
+        <CustomGlobalStyles />
+        <RouterProvider router={router} />
       </ThemeProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

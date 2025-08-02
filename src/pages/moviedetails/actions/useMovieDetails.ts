@@ -6,5 +6,5 @@ export const useMovieDetails = (movieId: number) =>
     useQuery<MovieDetailsResponse, Error>({
         queryKey: ['movieDetails', movieId],
         queryFn: () => fetchMovieDetails(movieId),
-        enabled: !!movieId, // Enable the query only if movieId is truthy
+        enabled: !!movieId, // Enable the query only if movieId is truthy 
     });

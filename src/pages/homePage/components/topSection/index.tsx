@@ -44,8 +44,7 @@ const TopSection = () => {
             </LinksContainer>
 
             <DownloadsRow>
-                <span></span>
-                <strong ><span style={{ color: '#89c403' }}>★</span> Popular Downloads</strong>
+                
                 <IconLink href="#">
                     <RssFeedIcon fontSize="small" />
                     more featured...

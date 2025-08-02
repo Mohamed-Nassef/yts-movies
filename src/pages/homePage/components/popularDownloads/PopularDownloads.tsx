@@ -2,9 +2,15 @@ import { Box, Grid, Typography } from '@mui/material';
 import MovieCard from '../../../../shared/components/moviecard';
 import { usePopularMovies } from '../../actions/usePopularMovies';
 import LoadingGrid from '../../../../shared/components/globalLoading/HomeLoading';
+//import { useMovies } from '../../actions/useMovies';
 
 const PopularDownloads = () => {
   const { data: movies = [], isLoading, isError, error } = usePopularMovies();
+
+  // const { movies: movies = [], loading,  error } = useMovies({ sort_by: 'download_count', limit: 8, order_by: 'desc' });
+  // const isLoading = loading || !movies;
+  // const isError = error !== null;
+
 
   return (
     <Box sx={{ px: 3, py: 4, backgroundColor: '#1e1e1e', borderRadius: 3, mb: 4 }}>

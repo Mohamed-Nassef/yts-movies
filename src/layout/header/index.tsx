@@ -26,10 +26,11 @@ import {
     SpinerSearch
 } from './HeaderStyles';
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { debounce  } from 'lodash';
+import { debounce } from 'lodash';
 import { useSearchMovies } from './actions/useSearchMovies';
 import { CircularProgress } from '@mui/material';
 //import { useDebouncedValue } from './actions/useDebouncedValue';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 
 export default function Header() {
@@ -169,7 +170,7 @@ export default function Header() {
                                         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                                             🔍 Advanced Search
                                         </Typography>
-                                        <Typography variant="caption" sx={{ fontSize: { xs: '10px' }}} >
+                                        <Typography variant="caption" sx={{ fontSize: { xs: '10px' } }} >
                                             Find more results and apply filters
                                         </Typography>
                                     </Link>
@@ -191,7 +192,20 @@ export default function Header() {
                 {/* Navigation Links */}
                 <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3, alignItems: 'center' }}>
                     <StyledNavLink to="/">Home</StyledNavLink>
-                    <StyledNavLink to="/4k" sx={{ color: '#89c403' }}>4K</StyledNavLink>
+                    <StyledNavLink
+                        to="/ai-search"
+                        sx={{
+                            color: '#89c403',
+                            display: 'flex',
+                            flexDirection: 'row',
+                            alignItems: 'flex-start',
+                            gap: 0,
+                            textAlign: 'start',
+                        }}
+                    >
+                        <AutoAwesomeIcon sx={{ fontSize: 12 }} />
+                        <Typography variant="caption" fontSize={14}>AI</Typography>
+                    </StyledNavLink>
                     <StyledNavLink to="/trending">Trending</StyledNavLink>
                     <StyledNavLink to="/browse-movies">Browse Movies</StyledNavLink>
                     <StyledNavLink to="/login">Login</StyledNavLink>
@@ -202,6 +216,7 @@ export default function Header() {
 
             {/* Mobile Menu */}
             <Menu
+                id="mobile-menu"
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleMenuClose}
@@ -211,7 +226,7 @@ export default function Header() {
             >
                 {[
                     { text: 'Home', path: '/' },
-                    { text: '4K', path: '/4k' },
+                    { text: 'Ai', path: '/ai-search' },
                     { text: 'Trending', path: '/trending' },
                     { text: 'Browse Movies', path: '/browse-movies' },
                     { text: 'Login', path: '/login' },

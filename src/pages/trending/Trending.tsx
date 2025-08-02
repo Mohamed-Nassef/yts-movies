@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSearch } from '../ browseMovies/actions/useSearch';
+import { useSearch } from '../browseMovies/actions/useSearch';
 import MovieList from '../../shared/components/movelist/MoveList';
 import PaginationBar from '../../shared/components/paginationBar/PaginationBar';
 import BrowseSearchLoading from '../../shared/components/globalLoading/BrowseSearchLoading';
