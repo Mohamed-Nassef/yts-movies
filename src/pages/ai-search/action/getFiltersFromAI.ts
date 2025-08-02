@@ -1,4 +1,4 @@
-const API_KEY = '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'; // Replace with your OpenRouter API key
+const API_KEY = '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';
 
 export async function getFiltersFromAI(userPrompt: string) {
     const systemPrompt = `You are a movie filter generator.
@@ -10,7 +10,7 @@ Given a natural language description, return a JSON object with this structure:
   sort_by: string       // One of: ["latest", "oldest", ..., "downloads"]
 }
 Respond ONLY with valid JSON and nothing else.`;
-
+    console.log(API_KEY)
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -28,8 +28,8 @@ Respond ONLY with valid JSON and nothing else.`;
     console.log(systemPrompt, userPrompt);
     const data = await response.json();
     const message = data?.choices?.[0]?.message?.content;
-    console.log('message',message);
-
+    console.log('message', message);
+    console.log(API_KEY)
     try {
         const cleaned = message?.replace(/```json|```/g, '').trim();
         const parsed = JSON.parse(cleaned);
